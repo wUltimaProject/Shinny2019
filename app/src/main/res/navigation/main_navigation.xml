@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation" app:startDestination="@id/contactListFragment">
+
+    <fragment android:id="@+id/contactListFragment"
+              android:name="com.wultimaproject.shinny2019.ContactListFragment"
+              android:label="ContactListFragment">
+
+        <argument android:name="args" android:defaultValue="@null" />
+
+        <action android:id="@+id/action_contactlist"
+                app:destination="@+id/contactListFragment"/>
+
+        <deepLink android:id="@+id/deepLink" app:uri="shinnyapp://contact_list_fragment"/>
+    </fragment>
+
+
+
+</navigation>
