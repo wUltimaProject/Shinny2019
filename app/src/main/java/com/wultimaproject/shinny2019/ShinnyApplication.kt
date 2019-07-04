@@ -7,6 +7,8 @@ import com.wultimaproject.shinny2019.common.dependencyinjection.application.Dagg
 
 class ShinnyApplication : Application(){
 
+
+
     val component: ApplicationComponent by lazy {
         DaggerApplicationComponent.builder()
             .applicationModule(ApplicationModule(this))
