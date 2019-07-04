@@ -1,4 +1,4 @@
-package com.wultimaproject.shinny2019.di
+package com.wultimaproject.shinny2019.common.dependencyinjection.application
 
 import android.app.Application
 import com.wultimaproject.shinny2019.ShinnyApplication
@@ -11,8 +11,6 @@ class ApplicationModule(private val baseApp: ShinnyApplication) {
 
     @Provides
     @Singleton
-    @PerApplication
-    fun provideApplication(): Application {
-        return baseApp
-    }
+    fun provideApplication() = baseApp
+
 }

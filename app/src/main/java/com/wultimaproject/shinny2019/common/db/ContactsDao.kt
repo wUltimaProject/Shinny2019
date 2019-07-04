@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import com.wultimaproject.shinny2019.model.Contact
+import com.wultimaproject.shinny2019.model.db.Contact
 
 
 @Dao

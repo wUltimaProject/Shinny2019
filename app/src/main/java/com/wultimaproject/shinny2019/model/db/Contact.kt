@@ -1,10 +1,10 @@
-package com.wultimaproject.shinny2019.model
+package com.wultimaproject.shinny2019.model.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity
+@Entity(tableName = "contacts")
 data class Contact(
     @PrimaryKey private val contactId: Long,
     private val name: String,

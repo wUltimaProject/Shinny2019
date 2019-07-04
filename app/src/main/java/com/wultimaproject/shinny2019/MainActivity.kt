@@ -2,6 +2,7 @@ package com.wultimaproject.shinny2019
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.wultimaproject.shinny2019.common.dependencyinjection.application.ApplicationComponent
 
 class MainActivity : AppCompatActivity() {
 
