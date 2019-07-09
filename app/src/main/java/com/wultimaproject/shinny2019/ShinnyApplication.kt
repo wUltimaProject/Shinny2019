@@ -5,19 +5,28 @@ import com.wultimaproject.shinny2019.common.dependencyinjection.application.Appl
 import com.wultimaproject.shinny2019.common.dependencyinjection.application.ApplicationModule
 import com.wultimaproject.shinny2019.common.dependencyinjection.application.DaggerApplicationComponent
 
-class ShinnyApplication : Application(){
+open class ShinnyApplication : Application(){
 
-
-
-    val component: ApplicationComponent by lazy {
-        DaggerApplicationComponent.builder()
-            .applicationModule(ApplicationModule(this))
-            .build()
+    companion object {
+        lateinit var component: ApplicationComponent
     }
 
     override fun onCreate() {
         super.onCreate()
-        component.inject(this)
+
+        component = DaggerApplicationComponent.builder()
+            .applicationModule(ApplicationModule(this))
+            .build()
+//        val component: ApplicationComponent by lazy {
+//            DaggerApplicationComponent.builder()
+//                .applicationModule(ApplicationModule(this))
+//                .build()
+//        }
+    }
+
+
+    fun getAppComponent(): ApplicationComponent{
+        return component
     }
 
 

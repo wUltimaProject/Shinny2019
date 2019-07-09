@@ -8,8 +8,13 @@ import javax.inject.Inject
 
 class DbRepository @Inject constructor(val contactDao: ContactDao) {
 
+    fun addSampleContact (contact: Contact){
+        contactDao.save(contact )
+    }
 
     fun loadAllContacts(): List<Contact> {
             return contactDao.getAllContacts()
     }
+
+
 }

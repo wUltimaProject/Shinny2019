@@ -3,6 +3,9 @@
 
     <data>
 
+        <import type="android.view.View"/>
+        <variable name="viewModel"
+                  type="com.wultimaproject.shinny2019.ui.viewmodels.ContactListVM"/>
 
 
     </data>
@@ -26,7 +29,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="@dimen/standard_6"
-            android:layout_marginEnd="@dimen/standard_6"/>
+            android:layout_marginEnd="@dimen/standard_6"
+            android:onClick="@{(v) ->viewModel.addSampleContact()}"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
