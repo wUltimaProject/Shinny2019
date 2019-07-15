@@ -10,8 +10,8 @@ import com.wultimaproject.shinny2019.ui.repositories.DbRepository
 class ContactListVM (private val dbRepository: DbRepository) : ViewModel(){
 
     fun addSampleContact(){
-        dbRepository.addSampleContact(Contact(1, "name", "address", "message", "phoneNumber"))
-        Log.d("tag", "contactAdded")
+        dbRepository.addSampleContact(Contact(3, "name", "address", "message", "phoneNumber"))
+        dbRepository.loadAllContacts()
     }
 
 

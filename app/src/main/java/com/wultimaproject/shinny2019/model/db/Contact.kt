@@ -7,19 +7,22 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "contacts")
 data class Contact(
-    @PrimaryKey(autoGenerate = true)  val contactId: Long?,
+//    @PrimaryKey(autoGenerate = true)
+//    @ColumnInfo(name = "contactId")
+//    val contactId: Long,
 
+    @PrimaryKey val uid: Int,
 
     @ColumnInfo(name = "name")
-    val name: String?,
+    val name: String,
     @ColumnInfo(name = "address")
-    val address: String?,
+    val address: String,
     @ColumnInfo(name = "message")
-    val message: String?,
+    val message: String,
     @ColumnInfo(name = "phoneNumber")
-    val phoneNumber: String?
+    val phoneNumber: String
 )
 
 {
-    constructor():this(null,"","","","")
+    constructor():this(-1,"","","","")
 }

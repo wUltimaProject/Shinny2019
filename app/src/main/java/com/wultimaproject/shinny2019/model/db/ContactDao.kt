@@ -1,5 +1,6 @@
 package com.wultimaproject.shinny2019.model.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -11,16 +12,16 @@ import androidx.room.Query
 interface ContactDao{
 
     @Query("DELETE FROM contacts")
-    abstract fun dropTable()
+     fun dropTable()
 
     @Insert(onConflict = REPLACE)
-    abstract fun save(contact: Contact)
+     fun save(vararg contact: Contact)
 
     @Insert(onConflict = REPLACE)
-    abstract fun save(contactsList: List<Contact>)
+     fun saveList(contactsList: List<Contact>)
 
     @Delete
-    abstract fun delete(contact: Contact)
+     fun delete(contact: Contact)
 
     @Query("SELECT * FROM contacts")
     fun getAllContacts() : List<Contact>
