@@ -20,5 +20,6 @@ import dagger.Binds
     interface ApplicationComponent {
         fun inject(mainActivity: MainActivity)
         fun inject(dbRepository: DbRepository)
-       fun inject(contactListFragment: ContactListFragment)
+        fun inject(contactListFragment: ContactListFragment)
+
     }

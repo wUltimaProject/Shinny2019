@@ -13,11 +13,11 @@ import kotlinx.coroutines.launch
 
 class ContactListVM (private val dbRepository: DbRepository) : ViewModel(){
     var getContact: MutableLiveData<List<Contact>> = MutableLiveData()
+    var sampleContact: Contact = Contact(3, "name", "address", "message", "phoneNumber")
 
-//     var contacts: LiveData<List<Contact>> = MutableLiveData<List<Contact>>()
 
     fun addSampleContact(){
-        dbRepository.addSampleContact(Contact(3, "name", "address", "message", "phoneNumber"))
+        dbRepository.addSampleContact(sampleContact)
         loadContacts()
     }
 

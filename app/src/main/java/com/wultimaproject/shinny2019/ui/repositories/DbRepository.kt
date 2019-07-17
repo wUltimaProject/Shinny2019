@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
-class DbRepository @Inject constructor(val contactDao: ContactDao) {
+ class DbRepository @Inject constructor(val contactDao: ContactDao) {
 
 //    private lateinit var contacts: MutableLiveData<List<Contact>>
 //    var contacts: MutableLiveData<List<Contact>> = MutableLiveData()
