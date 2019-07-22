@@ -11,6 +11,7 @@ import com.wultimaproject.shinny2019.model.Result.Success
 import com.wultimaproject.shinny2019.model.db.Contact
 import com.wultimaproject.shinny2019.ui.repositories.DbRepository
 import com.wultimaproject.shinny2019.ui.repositories.DbRepositoryGeneralInterface
+import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
@@ -37,18 +38,14 @@ internal class ContactListVMTest {
     private lateinit var SUT: ContactListVM
     private lateinit var dbRepositoryFake: DbRepositoryFake
 
-    inline fun <reified T> mock(): T = Mockito.mock(T::class.java)
     var sampleContact: Contact = Contact(3, "name", "address", "message", "phoneNumber")
-
-     var observer: Observer<List<Contact>> = mock()
-
 
     @Before
         fun setup(){
         dbRepositoryFake = DbRepositoryFake()
-        runBlocking { dbRepositoryFake.addSampleContact(sampleContact)}
+//        runBlocking { dbRepositoryFake.addSampleContact(sampleContact)}
         SUT = ContactListVM(dbRepositoryFake)
-        SUT.getContact.observeForever(observer)
+//        SUT.getContact.observeForever(observer)
     }
 
     //contactSaved_success
@@ -58,8 +55,13 @@ internal class ContactListVMTest {
         dbRepositoryFake.setReturnError(false)
 
         SUT.addSampleContact()
-        assertThat( dbRepositoryFake.contactListSaved.values.first() == sampleContact)
-//        assertThat( SUT.getContact.value.first() == sampleContact)
+        assertTrue( dbRepositoryFake.contactListSaved.values.first() == sampleContact)
+//        assertTrue( dbRepositoryFake.contactListSaved.values.first().uid == sampleContact.uid)
+//        assertTrue( dbRepositoryFake.contactListSaved.values.first().name == sampleContact.name)
+//        assertTrue( dbRepositoryFake.contactListSaved.values.first().address.equals(sampleContact.address))
+//        assertTrue( dbRepositoryFake.contactListSaved.values.first().message == sampleContact.message)
+//        assertTrue( dbRepositoryFake.contactListSaved.values.first().phoneNumber == sampleContact.phoneNumber)
+//        assertTrue( dbRepositoryFake.contactListSaved.values.first() == Contact(4, "name", "addresss", "message", "phoneNumber"))
 
     }
 
