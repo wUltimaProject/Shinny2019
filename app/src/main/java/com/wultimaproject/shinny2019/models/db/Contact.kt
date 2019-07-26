@@ -1,4 +1,4 @@
-package com.wultimaproject.shinny2019.model.db
+package com.wultimaproject.shinny2019.models.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

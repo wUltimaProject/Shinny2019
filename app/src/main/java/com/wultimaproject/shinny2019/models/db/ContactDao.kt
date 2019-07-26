@@ -1,6 +1,5 @@
-package com.wultimaproject.shinny2019.model.db
+package com.wultimaproject.shinny2019.models.db
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert

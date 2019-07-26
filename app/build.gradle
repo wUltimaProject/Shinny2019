@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs'
 
 
 
@@ -75,13 +77,12 @@ android {
 dependencies {
 
 
-
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutines"
 //    implementation "com.android.support.constraint:constraint-layout:$constraints_layout"
     implementation "androidx.constraintlayout:constraintlayout:$constraints_layout"
 
 
-
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "com.android.databinding:compiler:$databinding_compiler"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$kotlinLifecycleLivedata"
 

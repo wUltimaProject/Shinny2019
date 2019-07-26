@@ -5,7 +5,7 @@
 
         <import type="android.view.View"/>
         <variable name="viewModel"
-                  type="com.wultimaproject.shinny2019.ui.viewmodels.ContactListVM"/>
+                  type="com.wultimaproject.shinny2019.viewmodels.ContactListVM"/>
 
 
     </data>

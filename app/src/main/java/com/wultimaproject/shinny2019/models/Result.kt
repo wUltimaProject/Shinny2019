@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wultimaproject.shinny2019.model
+package com.wultimaproject.shinny2019.models
 
 
 /**

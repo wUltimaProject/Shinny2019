@@ -2,20 +2,31 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_navigation" app:startDestination="@id/contactListFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/contactListFragment">
 
     <fragment android:id="@+id/contactListFragment"
               android:name="com.wultimaproject.shinny2019.ui.ContactListFragment"
               android:label="ContactListFragment">
 
         <argument android:name="args" android:defaultValue="@null" />
-
         <action android:id="@+id/action_contactlist"
-                app:destination="@+id/contactListFragment"/>
-
+                app:destination="@+id/addContactDialogFragment"/>
         <deepLink android:id="@+id/deepLink" app:uri="shinnyapp://contact_list_fragment"/>
     </fragment>
 
+
+    <fragment android:id="@+id/addContactDialogFragment"
+              android:name="com.wultimaproject.shinny2019.ui.AddContactDialogFragment"
+              android:label="fragment_add_contact_dialog"
+              tools:layout="@layout/fragment_add_contact_dialog">
+        <action android:id="@+id/action_addContactDialogFragment_to_contactListFragment"
+                app:destination="@id/contactListFragment"/>
+        <argument android:name="defaultArgument"
+                  app:argType="string"
+                  android:defaultValue="1"/>
+    </fragment>
 
 
 </navigation>

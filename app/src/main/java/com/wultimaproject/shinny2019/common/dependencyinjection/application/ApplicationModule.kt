@@ -1,16 +1,14 @@
 package com.wultimaproject.shinny2019.common.dependencyinjection.application
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.wultimaproject.shinny2019.ShinnyApplication
-import com.wultimaproject.shinny2019.model.db.ContactDao
-import com.wultimaproject.shinny2019.model.db.ShinnyDatabase
-import com.wultimaproject.shinny2019.ui.repositories.DbRepository
+import com.wultimaproject.shinny2019.models.db.ContactDao
+import com.wultimaproject.shinny2019.models.db.ShinnyDatabase
+import com.wultimaproject.shinny2019.repositories.DbRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
-import dagger.Binds
 
 
 @Module

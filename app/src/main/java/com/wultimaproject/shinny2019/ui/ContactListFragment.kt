@@ -1,5 +1,6 @@
 package com.wultimaproject.shinny2019.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,19 +12,20 @@ import androidx.lifecycle.Observer
 import com.wultimaproject.shinny2019.R
 import com.wultimaproject.shinny2019.ShinnyApplication
 import com.wultimaproject.shinny2019.databinding.FragmentContactListBinding
-import com.wultimaproject.shinny2019.model.db.Contact
-import com.wultimaproject.shinny2019.ui.repositories.DbRepository
-import com.wultimaproject.shinny2019.ui.viewmodels.ContactListVM
-import java.lang.annotation.Inherited
+import com.wultimaproject.shinny2019.models.db.Contact
+import com.wultimaproject.shinny2019.repositories.DbRepository
+import com.wultimaproject.shinny2019.viewmodels.ContactListVM
 import javax.inject.Inject
 
 
 
-class ContactListFragment : Fragment(){
+class ContactListFragment : BaseFragment(){
 
     @Inject lateinit var dbRepository: DbRepository
 
     lateinit var viewModel: ContactListVM
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
          val  binding =DataBindingUtil.inflate(inflater, R.layout.fragment_contact_list, container, false) as FragmentContactListBinding
@@ -31,6 +33,10 @@ class ContactListFragment : Fragment(){
         binding.lifecycleOwner = this
         viewModel = ContactListVM(dbRepository)
         binding.viewModel = viewModel
+
+        setCurrentFragment(this)
+        setCurrentVM(viewModel)
+
         return binding.root
     }
 

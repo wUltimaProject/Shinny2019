@@ -1,13 +1,9 @@
-package com.wultimaproject.shinny2019.ui.repositories
+package com.wultimaproject.shinny2019.repositories
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.liveData
-import com.wultimaproject.shinny2019.model.Result
-import com.wultimaproject.shinny2019.model.db.Contact
-import com.wultimaproject.shinny2019.model.db.ContactDao
+import com.wultimaproject.shinny2019.models.Result
+import com.wultimaproject.shinny2019.models.db.Contact
+import com.wultimaproject.shinny2019.models.db.ContactDao
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import javax.inject.Inject
