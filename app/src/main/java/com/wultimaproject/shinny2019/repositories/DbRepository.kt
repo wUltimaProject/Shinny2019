@@ -14,9 +14,9 @@ import javax.inject.Inject
 
 
 
-     override suspend fun addSampleContact(entry: Contact) {
+     override suspend fun addSampleContact(contact: Contact) {
          GlobalScope.launch {
-             contactDao.save(entry)
+             contactDao.save(contact)
          }
      }
 

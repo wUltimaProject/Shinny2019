@@ -21,12 +21,15 @@
               android:name="com.wultimaproject.shinny2019.ui.AddContactDialogFragment"
               android:label="fragment_add_contact_dialog"
               tools:layout="@layout/fragment_add_contact_dialog">
-        <action android:id="@+id/action_addContactDialogFragment_to_contactListFragment"
-                app:destination="@id/contactListFragment"/>
+
         <argument android:name="defaultArgument"
                   app:argType="string"
                   android:defaultValue="1"/>
+
     </fragment>
+
+    <!--<action android:id="@+id/action_addContactDialogFragment_to_contactListFragment"-->
+    <!--app:destination="@id/contactListFragment"/>-->
 
 
 </navigation>
